@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DetailsPage, HomePage, LoginPage, CategoryPage } from "./pages";
 
 function App() {
-  const API_URL = "https://api.themoviedb.org/3";
+  /*   const API_URL = "https://api.themoviedb.org/3";
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -18,7 +18,7 @@ function App() {
       console.log(movies);
     };
     fetchMovies();
-  }, []);
+  }, []); */
   return (
     <AuthProvider>
       <BrowserRouter>

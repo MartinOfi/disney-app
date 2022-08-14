@@ -1,19 +1,34 @@
-export const Login = () => {
+import { ErrorMessage } from "formik";
+
+export const Login = ({ handleChange, handleSubmit }) => {
   return (
-    <div>
-      <form>
-        <h1>Inicia sesión con tu correo</h1>
+    <div className="container bg-dark">
+      <form
+        className="d-flex flex-column justify-content-center align-items-center"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit(e);
+        }}
+      >
+        <h1 className="text-white">Iniciar Sesion</h1>
         <input
-          type="text"
+          type="email"
           name="email"
-          id=""
           placeholder="Correo electrónico"
+          onChange={handleChange}
         />
-        <br />
-        <button>CONTINUAR</button>
-        <p>
-          ¿Primera vez en la WikiTincho? <a href="/register">Registrate</a>
-        </p>
+        <ErrorMessage name="email" component="small" className="text-danger" />
+        <div>
+          <input
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            onChange={handleChange}
+          />
+        </div>
+        <button type="submit">Enviar</button>
+
+        <a href="/login">Iniciar Sesion</a>
       </form>
     </div>
   );
