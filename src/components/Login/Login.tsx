@@ -1,7 +1,8 @@
+import { Form, InputMail } from "assets/styles/Forms";
 import { PrimaryButton } from "assets/styles/PrimaryButton";
-import { Container, Form, InputMail } from "./Login.styles";
+import { Container } from "./Login.styles";
 
-export const LoginContainer = () => {
+export const Login = () => {
   return (
     <Container>
       <h1></h1>

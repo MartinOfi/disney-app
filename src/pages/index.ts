@@ -1,5 +1,5 @@
-import Home from "./home";
-import Details from "./details";
+import HomePage from "./home";
+import DetailsPage from "./details";
 import LoginPage from "./login";
-import Category from "./category";
-export { Home, Details, LoginPage as Login, Category };
+import CategoryPage from "./category";
+export { HomePage, DetailsPage, LoginPage, CategoryPage };

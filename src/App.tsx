@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Details, Home, Login } from "./pages";
+import { DetailsPage, HomePage, LoginPage, CategoryPage } from "./pages";
 
 function App() {
   const API_URL = "https://api.themoviedb.org/3";
@@ -19,9 +19,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="login" element={<Login />} />
-        <Route path="/detail" element={<Details />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="/category" element={<CategoryPage />} />
+        <Route path="/detail" element={<DetailsPage />} />
       </Routes>
     </BrowserRouter>
   );
