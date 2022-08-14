@@ -1,35 +1,32 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useTogglePasswordVisibility } from "hooks/useTogglePasswordVisibility";
+import { ErrorMessage } from "formik";
 
 export const Register = ({ handleChange, handleSubmit }) => {
-  const { handlePasswordVisibility, passwordVisibility, rightIcon } =
-    useTogglePasswordVisibility();
   return (
-    <div>
+    <div
+      className="container bg-dark
+    "
+    >
       <form
+        className="d-flex flex-column justify-content-center align-items-center"
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmit(e);
         }}
       >
-        <h1>Vamos a registrarnos</h1>
+        <h1 className="text-white">Vamos a registrarnos</h1>
         <input
-          type="text"
+          type="email"
           name="email"
           placeholder="Correo electrónico"
           onChange={handleChange}
         />
+        <ErrorMessage name="email" component="small" className="text-danger" />
         <div>
           <input
-            type={passwordVisibility ? "text" : "password"}
+            type="password"
             name="password"
             placeholder="Contraseña"
             onChange={handleChange}
-          />
-          <FontAwesomeIcon
-            cursor={"pointer"}
-            icon={rightIcon}
-            onClick={handlePasswordVisibility}
           />
         </div>
         <button type="submit">Registrar</button>
