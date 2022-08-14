@@ -1,25 +1,20 @@
-import { Form, InputMail } from "assets/styles/Forms";
-import { PrimaryButton } from "assets/styles/PrimaryButton";
-import { Container } from "./Login.styles";
-
 export const Login = () => {
   return (
-    <Container>
-      <h1></h1>
-      <Form>
+    <div>
+      <form>
         <h1>Inicia sesión con tu correo</h1>
-        <InputMail
+        <input
           type="text"
           name="email"
           id=""
           placeholder="Correo electrónico"
         />
         <br />
-        <PrimaryButton>CONTINUAR</PrimaryButton>
+        <button>CONTINUAR</button>
         <p>
-          ¿Primera vez en Disney +? <a href="#">Suscribirse</a>
+          ¿Primera vez en la WikiTincho? <a href="/register">Registrate</a>
         </p>
-      </Form>
-    </Container>
+      </form>
+    </div>
   );
 };
