@@ -9,7 +9,7 @@ export const CarouselItem = ({ movie }) => {
         alt=""
         className="w-100 px-2"
         height={"40%"}
-        style={{ maxHeight: "250px" }}
+        style={{ maxHeight: "350px" }}
       />
       <h1 className="mt-2 text-white">{title}</h1>
     </div>

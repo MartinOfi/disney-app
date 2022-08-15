@@ -18,3 +18,9 @@ export const GenreStyle = styled.div`
     border: 2px rgba(249, 249, 249, 0.3) solid;
   }
 `;
+export const GenreGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, minmax(250px, 1fr));
+  grid-auto-rows: 100px;
+  grid-gap: 20px;
+`;

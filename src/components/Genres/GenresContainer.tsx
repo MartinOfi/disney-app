@@ -2,20 +2,21 @@ import { Carousel } from "antd";
 import { getGenresMovies } from "api/movies";
 import { useEffect, useState } from "react";
 import { Genre } from "./Genre";
+import { GenreGrid } from "./style";
 
 export const GenreContainer = () => {
   const [genres, setGenres] = useState([]);
   useEffect(() => {
     getGenresMovies().then((res) => {
-      setGenres(res.data.genres);
+      setGenres(res.data.genres.slice(0, 5));
     });
   }, []);
 
   return (
-    <Carousel centerMode slidesToShow={5} swipeToSlide>
+    <GenreGrid className="mx-5 p-3">
       {genres.map((genre) => (
         <Genre key={genre.id} genre={genre} />
       ))}
-    </Carousel>
+    </GenreGrid>
   );
 };
