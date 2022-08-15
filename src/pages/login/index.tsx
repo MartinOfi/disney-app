@@ -3,9 +3,9 @@ import { useAuth } from "context/authContext";
 import { Formik } from "formik";
 import { useNavigate } from "react-router-dom";
 import {
-  errorRegisterAlert,
-  loadingRegisterAlert,
-  successRegisterAlert,
+  errorLoginAlert,
+  loadingLoginAlert,
+  successLoginAlert,
 } from "utils/constants";
 import { object, string } from "yup";
 
@@ -13,22 +13,24 @@ const initialValues = {
   email: "",
   password: "",
 };
+
 const RegisterPage = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
 
   const onSubmit = async ({ email, password }) => {
-    loadingRegisterAlert();
+    loadingLoginAlert();
     try {
       await login(email, password);
+      successLoginAlert(navigate("/"));
     } catch (error) {
-      console.log(error);
-      errorRegisterAlert();
+      console.error(error);
+      errorLoginAlert();
     }
   };
   const validationSchema = object().shape({
     email: string().trim().required("El correo es requerido"),
-    password: string().required("Contraseña del documento requerido").min(6),
+    password: string().required("Contraseña requerida").min(6),
   });
   return (
     <Formik
@@ -36,9 +38,7 @@ const RegisterPage = () => {
       onSubmit={onSubmit}
       validationSchema={validationSchema}
     >
-      {({ handleSubmit, handleChange, errors }) => {
-        console.log(errors);
-
+      {({ handleSubmit, handleChange }) => {
         return (
           <Login handleSubmit={handleSubmit} handleChange={handleChange} />
         );

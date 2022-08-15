@@ -4,7 +4,7 @@ export const Login = ({ handleChange, handleSubmit }) => {
   return (
     <div className="container bg-dark">
       <form
-        className="d-flex flex-column justify-content-center align-items-center"
+        className="d-flex flex-column justify-content-center align-items-center p-5"
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmit(e);
@@ -18,17 +18,20 @@ export const Login = ({ handleChange, handleSubmit }) => {
           onChange={handleChange}
         />
         <ErrorMessage name="email" component="small" className="text-danger" />
-        <div>
-          <input
-            type="password"
-            name="password"
-            placeholder="Contraseña"
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit">Enviar</button>
 
-        <a href="/login">Iniciar Sesion</a>
+        <input
+          type="password"
+          name="password"
+          placeholder="Contraseña"
+          onChange={handleChange}
+        />
+        <ErrorMessage
+          name="password"
+          component="small"
+          className="text-danger"
+        />
+
+        <button type="submit">Enviar</button>
       </form>
     </div>
   );
