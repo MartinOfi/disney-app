@@ -6,7 +6,7 @@ import {
   errorLoginAlert,
   loadingLoginAlert,
   successLoginAlert,
-} from "utils/constants";
+} from "utils/alerts";
 import { object, string } from "yup";
 
 const initialValues = {

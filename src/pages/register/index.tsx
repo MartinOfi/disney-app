@@ -6,7 +6,7 @@ import {
   errorRegisterAlert,
   loadingRegisterAlert,
   successRegisterAlert,
-} from "utils/constants";
+} from "utils/alerts";
 import { object, string } from "yup";
 
 const initialValues = {

@@ -22,4 +22,9 @@ code {
 .bg-secondary{
   background-color: #60688492
 }
-@import "/src/assets/generals.css";
+.ant-carousel.slick-dots-bottom {
+  bottom:none !important;
+}
+@import "/src/assets/components/header.css";
+@import "/src/assets/components/home.css";
+@import "/src/assets/components/genres.css";
