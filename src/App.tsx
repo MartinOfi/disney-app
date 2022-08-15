@@ -1,7 +1,6 @@
-import { Header } from "components/Header/Header";
+import { HeaderContainer } from "components/Header/HeaderContainer";
 import AuthProvider from "context/authContext";
 import RegisterPage from "pages/register";
-import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DetailsPage, HomePage, LoginPage, CategoryPage } from "./pages";
 
@@ -22,7 +21,7 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <Header />
+        <HeaderContainer />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="login" element={<LoginPage />} />
