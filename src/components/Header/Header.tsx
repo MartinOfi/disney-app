@@ -1,10 +1,11 @@
-import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Dropdown, Menu, Space, Button } from "antd";
+import { Dropdown, Menu, Space } from "antd";
 import { Link } from "react-router-dom";
+import { HeaderProps } from "./stories";
 import { InputStyled } from "./styles";
 
-export const Header = ({ userName, handleLogout }) => {
+export const Header = ({ userName, handleLogout }: HeaderProps) => {
   const menu = (
     <Menu
       items={[
@@ -60,44 +61,3 @@ export const Header = ({ userName, handleLogout }) => {
     </nav>
   );
 };
-/*  <div className="dropdown">
-            <button
-              className="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              onClick={handleShowDropdown}
-            >
-              {userName}
-            </button>
-            <ul
-              className={`dropdown-menu list-group`}
-              aria-labelledby="dropdownMenuButton1"
-            >
-              <li onClick={handleLogout}>
-                <a className="dropdown-item text-danger" href="#">
-                  Cerrar Sesion
-                </a>
-              </li>
-            </ul>
-          </div>  */
-{
-  /* <div className="dropdown">
-          <button
-            className="btn btn-secondary dropdown-toggle"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Dropdown button
-          </button>
-          <ul className="dropdown-menu-show mb-0">
-            <li>
-              <a className="dropdown-item text-danger" href="#">
-                Cerrar Sesion
-              </a>
-            </li>
-          </ul>
-        </div> */
-}

@@ -1,6 +1,7 @@
+import { GenresProps } from "./stories";
 import { GenreStyle } from "./style";
 
-export const Genre = ({ genre }) => {
+export const Genre = ({ genre }: GenresProps) => {
   const { name } = genre;
   return (
     <GenreStyle className="mx-2">
