@@ -1,10 +1,7 @@
 import { BASIC_IMAGE_URL } from "utils/constants";
+import { CarouselProps } from "./stories";
 import { CarouselItemStyled } from "./styles";
 
-interface CarouselProps {
-  image: string;
-  title?: string;
-}
 export const Carousel = ({ image, title }: CarouselProps) => {
   return (
     <CarouselItemStyled className="shadow mb-5 mx-4">

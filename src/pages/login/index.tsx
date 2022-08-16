@@ -1,4 +1,4 @@
-import { Login } from "components/Login/Login";
+import { Login } from "components";
 import { useAuth } from "context/authContext";
 import { Formik } from "formik";
 import { useNavigate } from "react-router-dom";

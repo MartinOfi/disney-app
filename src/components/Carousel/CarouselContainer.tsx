@@ -20,8 +20,3 @@ export const CarouselContainer = () => {
     </CarouselAnt>
   );
 };
-/* 
-{topRatedMovies.map(({ id, title, backdrop_path }) => {
-          return <Carousel key={id} title={title} image={backdrop_path} />;
-        })}
-*/

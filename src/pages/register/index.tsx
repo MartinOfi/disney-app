@@ -1,4 +1,4 @@
-import { Register } from "components/Register/Register";
+import { Register } from "components";
 import { useAuth } from "context/authContext";
 import { Formik } from "formik";
 import { useNavigate } from "react-router-dom";
@@ -37,7 +37,7 @@ const RegisterPage = () => {
       onSubmit={onSubmit}
       validationSchema={validationSchema}
     >
-      {({ handleSubmit, handleChange, errors }) => {
+      {({ handleSubmit, handleChange }) => {
         return (
           <Register handleSubmit={handleSubmit} handleChange={handleChange} />
         );

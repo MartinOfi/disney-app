@@ -2,6 +2,7 @@ import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dropdown, Menu, Space, Button } from "antd";
 import { Link } from "react-router-dom";
+import { InputStyled } from "./styles";
 
 export const Header = ({ userName, handleLogout }) => {
   const menu = (
@@ -28,9 +29,9 @@ export const Header = ({ userName, handleLogout }) => {
 
       <div className="ms-4 d-flex align-items-center ">
         <FontAwesomeIcon icon={faSearch} />
-        <input
+        <InputStyled
           id="inputSearch"
-          className="mb-0 ps-1 ms-2 form-control bg-secondary text-white border-0"
+          className="ps-1 ms-2 form-control bg-secondary"
           placeholder="BÚSQUEDA"
           minLength={3}
         />
