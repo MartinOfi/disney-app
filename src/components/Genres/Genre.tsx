@@ -8,5 +8,3 @@ export const Genre = ({ genre }) => {
     </GenreStyle>
   );
 };
-/* className="card shadow d-flex justify-content-center align-items-center bg-secondary text-white mx-3 mb-5 overflow-hidden"
-        style={{ height: "100px" }} */

@@ -38,8 +38,6 @@ const RegisterPage = () => {
       validationSchema={validationSchema}
     >
       {({ handleSubmit, handleChange, errors }) => {
-        console.log(errors);
-
         return (
           <Register handleSubmit={handleSubmit} handleChange={handleChange} />
         );

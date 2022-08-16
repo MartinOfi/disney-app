@@ -1,17 +1,15 @@
 import { BASIC_IMAGE_URL } from "utils/constants";
+import { CarouselItemStyled } from "./styles";
 
-export const CarouselItem = ({ movie }) => {
-  const { backdrop_path, title } = movie;
+interface CarouselProps {
+  image: string;
+  title?: string;
+}
+export const Carousel = ({ image, title }: CarouselProps) => {
   return (
-    <div className="shadow mb-5 pb-2 mb-4 mx-4 text-center">
-      <img
-        src={BASIC_IMAGE_URL + backdrop_path}
-        alt=""
-        className="w-100 px-2"
-        height={"40%"}
-        style={{ maxHeight: "350px" }}
-      />
-      <h1 className="mt-2 text-white">{title}</h1>
-    </div>
+    <CarouselItemStyled className="shadow mb-5 mx-4">
+      <img src={BASIC_IMAGE_URL + image} alt={title} />
+      {title && <h1 className="mt-2 text-truncate pb-2">{title}</h1>}
+    </CarouselItemStyled>
   );
 };

@@ -10,7 +10,14 @@ export const getPopularMovies = async () => {
 
 export const getGenresMovies = async () => {
   try {
-    return await axiosInstance.get("/genre/movie/list");
+    return await axiosInstance.get("/genre/movie/list?language=es-ES");
+  } catch (error) {
+    console.error(error);
+  }
+};
+export const getTopRatedMovies = async () => {
+  try {
+    return await axiosInstance.get("/movie/top_rated");
   } catch (error) {
     console.error(error);
   }

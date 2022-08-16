@@ -1,7 +1,6 @@
-import { axiosInstance } from "api/axios";
 import { useEffect, useState } from "react";
-import { CarouselItem } from "./Carousel";
-import { Carousel } from "antd";
+import { Carousel } from "./Carousel";
+import { Carousel as CarouselAnt } from "antd";
 import { getPopularMovies } from "api/movies";
 export const CarouselContainer = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -11,11 +10,18 @@ export const CarouselContainer = () => {
       setPopularMovies(res.data.results.slice(0, 10));
     });
   }, []);
+  console.log(popularMovies);
+
   return (
-    <Carousel centerMode autoplay autoplaySpeed={5000}>
-      {popularMovies.map((movie) => (
-        <CarouselItem key={movie.id} movie={movie} />
+    <CarouselAnt centerMode autoplay autoplaySpeed={5000}>
+      {popularMovies.map(({ id, title, backdrop_path }) => (
+        <Carousel key={id} title={title} image={backdrop_path} />
       ))}
-    </Carousel>
+    </CarouselAnt>
   );
 };
+/* 
+{topRatedMovies.map(({ id, title, backdrop_path }) => {
+          return <Carousel key={id} title={title} image={backdrop_path} />;
+        })}
+*/

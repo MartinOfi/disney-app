@@ -20,7 +20,7 @@ export const GenreStyle = styled.div`
 `;
 export const GenreGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-auto-rows: 100px;
   grid-gap: 20px;
 `;

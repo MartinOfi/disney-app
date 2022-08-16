@@ -1,4 +1,4 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dropdown, Menu, Space, Button } from "antd";
 import { Link } from "react-router-dom";
@@ -9,7 +9,11 @@ export const Header = ({ userName, handleLogout }) => {
       items={[
         {
           key: "1",
-          label: <p className="mb-0">Cerrar Sesion</p>,
+          label: (
+            <p className="mb-0" onClick={handleLogout} role="button">
+              Cerrar Sesion
+            </p>
+          ),
         },
       ]}
     />
@@ -38,15 +42,18 @@ export const Header = ({ userName, handleLogout }) => {
             onClick={(e) => e.preventDefault()}
           >
             <Space>
-              <Button className="bg-secondary text-white border-0">
-                {userName}
-              </Button>
+              <button className="btn bg-secondary text-white border-0">
+                <p className="mb-0 text-capitalize">{userName}</p>
+              </button>
             </Space>
           </a>
         </Dropdown>
       ) : (
-        <Link to={"/login"}>
-          <p>INICIAR SESION</p>
+        <Link
+          to={"/login"}
+          className="text-decoration-none text-white text-capitalize"
+        >
+          <p className=" mb-0">INICIAR SESION</p>
         </Link>
       )}
     </nav>
