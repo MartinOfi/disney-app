@@ -1,6 +1,6 @@
 # WikiTincho
 
-Aplicación web que muestra distintas peliculas con sus detalles particulares.
+Aplicación web que muestra distintas películas con sus detalles particulares.
 
 **Aquí tienes la aplicación desplegada en producción:**
 
