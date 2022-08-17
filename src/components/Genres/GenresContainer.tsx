@@ -1,5 +1,4 @@
-import { Carousel } from "antd";
-import { getGenresMovies } from "api/movies";
+import { getGenresMovies } from "api/genres";
 import { useEffect, useState } from "react";
 import { Genre } from "./Genre";
 import { GenreGrid } from "./style";
