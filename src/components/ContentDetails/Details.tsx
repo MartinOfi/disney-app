@@ -55,13 +55,13 @@ export const ContentDetails = ({
                   onClick={handleChangeTrailerModal}
                   className="btn btn-primary mt-4"
                 >
-                  <FontAwesomeIcon icon={faPlay} /> Ver Trailer
+                  <FontAwesomeIcon icon={faPlay} /> Ver Tráiler
                 </button>
               )}
             </div>
           </div>
           <div className="p-3">
-            <h2>Descripcion</h2>
+            <h2>Descripción</h2>
             <p className="h5">{overview}</p>
           </div>
           {actors.length > 0 && (

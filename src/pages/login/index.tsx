@@ -7,6 +7,7 @@ import {
   loadingLoginAlert,
   successLoginAlert,
 } from "utils/alerts";
+import { FireBaseErrors } from "utils/constants";
 import { object, string } from "yup";
 
 const initialValues = {
@@ -18,14 +19,30 @@ const RegisterPage = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
 
-  const onSubmit = async ({ email, password }) => {
+  const onSubmit = async ({ email, password }, { setFieldError }) => {
     loadingLoginAlert();
     try {
       await login(email, password);
       successLoginAlert(navigate("/"));
-    } catch (error) {
-      console.error(error);
+    } catch ({ code }) {
+      console.log(code);
+
       errorLoginAlert();
+      const {
+        internalError,
+        invalidEmail,
+        invalidPassword,
+        mailAlredyExists,
+        userNotFound,
+      } = FireBaseErrors;
+      code === invalidEmail && setFieldError("email", "Correo invalido");
+      code === invalidPassword &&
+        setFieldError("password", "Contraseña invalida");
+      code === mailAlredyExists &&
+        setFieldError("email", "Correo ya registrado");
+      code === internalError && setFieldError("email", "Error interno");
+      code === userNotFound &&
+        setFieldError("password", "Usuario no encontrado");
     }
   };
   const validationSchema = object().shape({

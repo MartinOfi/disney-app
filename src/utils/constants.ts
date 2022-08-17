@@ -24,3 +24,10 @@ export const responsive: SlidesResponsive[] = [
     slides: 5,
   },
 ];
+export const FireBaseErrors = {
+  mailAlredyExists: "auth/email-already-exists",
+  internalError: "auth/internal-error",
+  invalidEmail: "auth/invalid-email",
+  invalidPassword: "auth/invalid-password",
+  userNotFound: "auth/user-not-found",
+};

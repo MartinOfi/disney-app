@@ -36,6 +36,7 @@ export const loadingRegisterAlert = () => {
     text: "Espere un momento",
     icon: "info",
     buttons: [false],
+    timer: 2000,
   });
 };
 export const errorRegisterAlert = () => {
@@ -44,7 +45,7 @@ export const errorRegisterAlert = () => {
     text: "No se pudo registrar",
     icon: "error",
     buttons: [false],
-    timer: 2000,
+    timer: 1000,
   });
 };
 export const successRegisterAlert = (navigation) => {
