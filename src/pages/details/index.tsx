@@ -1,4 +1,4 @@
-import { getMovieCredits, getMovieDetails } from "api/movies";
+import { getMovieCredits, getMovieDetails } from "api";
 import { ContentDetails } from "components";
 import { Actor } from "components/ContentDetails/stories";
 import { useEffect, useState } from "react";

@@ -90,17 +90,18 @@ export const ContentDetails = ({
         footer={false}
         width="80vw"
         onCancel={handleChangeTrailerModal}
+        destroyOnClose
       >
         <div className="p-3">
-          {videos?.results.length > 0 && (
+          {videos?.results.length > 0 ? (
             <iframe
               width="100%"
               height="700px"
               src={`https://www.youtube.com/embed/${videos.results[0].key}`}
               title={videos.results[0].name}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope"
             ></iframe>
-          )}
+          ) : null}
         </div>
       </Modal>
     </div>

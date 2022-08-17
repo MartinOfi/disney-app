@@ -1,5 +1,14 @@
 import styled from "styled-components";
-
+export const GenreGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 100px;
+  grid-gap: 20px;
+  @media only screen and (max-width: 768px) {
+    grid-auto-rows: 50px;
+    grid-gap: 20px;
+  }
+`;
 export const GenreStyle = styled.div`
   cursor: pointer;
   display: flex;
@@ -17,10 +26,7 @@ export const GenreStyle = styled.div`
   &:hover {
     border: 2px rgba(249, 249, 249, 0.3) solid;
   }
-`;
-export const GenreGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-auto-rows: 100px;
-  grid-gap: 20px;
+  @media only screen and (max-width: 768px) {
+    height: 50px;
+  }
 `;

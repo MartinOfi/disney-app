@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Carousel } from "./Carousel";
 import { Carousel as CarouselAnt } from "antd";
-import { getPopularMovies } from "api/movies";
+import { getPopularMovies } from "api";
 export const CarouselContainer = () => {
   const [popularMovies, setPopularMovies] = useState([]);
 

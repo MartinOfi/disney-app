@@ -1,4 +1,4 @@
-import { getTopRatedMovies } from "api/movies";
+import { getTopRatedMovies } from "api";
 import { useEffect, useState } from "react";
 import { TopRated } from "./TopRated";
 

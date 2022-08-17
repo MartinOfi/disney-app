@@ -1,9 +1,7 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dropdown, Menu, Space } from "antd";
 import { Link } from "react-router-dom";
 import { HeaderProps } from "./stories";
-import { InputStyled } from "./styles";
+import { NavStyled } from "./styles";
 
 export const Header = ({ userName, handleLogout }: HeaderProps) => {
   const menu = (
@@ -21,26 +19,13 @@ export const Header = ({ userName, handleLogout }: HeaderProps) => {
     />
   );
   return (
-    <nav className="text-white d-flex justify-content-between align-items-center p-3">
+    <NavStyled>
       <Link to={"/"}>
-        <img src={"../logo.png"} alt="" width={150} height={80} />
+        <img src={"../logo.png"} alt="logo" />
       </Link>
-
-      <div className="ms-4 d-flex align-items-center ">
-        <FontAwesomeIcon icon={faSearch} />
-        <InputStyled
-          id="inputSearch"
-          className="ps-1 ms-2 form-control bg-secondary"
-          placeholder="BÚSQUEDA"
-          minLength={3}
-        />
-      </div>
       {userName ? (
         <Dropdown overlay={menu}>
-          <a
-            className="text-decoration-none text-white text-capitalize"
-            onClick={(e) => e.preventDefault()}
-          >
+          <a onClick={(e) => e.preventDefault()}>
             <Space>
               <button className="btn bg-secondary text-white border-0">
                 <p className="mb-0 text-capitalize">{userName}</p>
@@ -56,6 +41,6 @@ export const Header = ({ userName, handleLogout }: HeaderProps) => {
           <p className=" mb-0">INICIAR SESION</p>
         </Link>
       )}
-    </nav>
+    </NavStyled>
   );
 };

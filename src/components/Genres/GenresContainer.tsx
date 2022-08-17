@@ -1,4 +1,4 @@
-import { getGenresMovies } from "api/genres";
+import { getGenresMovies } from "api";
 import { useEffect, useState } from "react";
 import { Genre } from "./Genre";
 import { GenreGrid } from "./style";

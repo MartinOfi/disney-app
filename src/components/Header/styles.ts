@@ -1,10 +1,17 @@
 import styled from "styled-components";
-
-export const InputStyled = styled.input`
-  margin-bottom: 0;
+export const NavStyled = styled.nav`
   color: white;
-  border: 0;
-  &::placeholder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  img {
+    width: 120px;
+    height: 70px;
+  }
+  a {
+    text-decoration: none;
     color: white;
+    text-transform: capitalize;
   }
 `;

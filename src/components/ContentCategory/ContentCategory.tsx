@@ -2,12 +2,19 @@ import { Carousel as CarouselAntd } from "antd";
 import { Carousel } from "components/Carousel/Carousel";
 import { useSlidesToShow } from "hooks/useSlidesToShow";
 import { responsive } from "utils/constants";
-export const ContentCategory = ({ movies, categoryName }) => {
+import { ContentCategoryProps } from "./stories";
+
+export const ContentCategory = ({
+  movies,
+  categoryName,
+}: ContentCategoryProps) => {
   const { slides } = useSlidesToShow(responsive);
+
   return (
     <div className="p-5">
       <h1 className="text-white mb-5">{categoryName}</h1>
       <CarouselAntd
+        infinite
         slidesToShow={slides}
         slidesPerRow={3}
         centerMode
