@@ -1,4 +1,16 @@
 export interface DetailsProps {
+  movie: Movie;
+  actors: Actor[];
+  trailerModal: boolean;
+  handleChangeTrailerModal: () => void;
+}
+export interface Actor {
+  id: number;
+  character?: string;
+  name: string;
+  profile_path: string;
+}
+interface Movie {
   backdrop_path: string;
   genres: {
     id: number;
@@ -15,6 +27,7 @@ export interface DetailsProps {
   videos: {
     results: {
       id: string;
+      key: string;
       name: string;
       site: string;
       size: number;
@@ -22,11 +35,4 @@ export interface DetailsProps {
     }[];
   };
   vote_average: number;
-  actors: Actor[];
-}
-export interface Actor {
-  id: number;
-  character?: string;
-  name: string;
-  profile_path: string;
 }

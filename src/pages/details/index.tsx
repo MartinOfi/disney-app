@@ -6,6 +6,10 @@ import { useParams } from "react-router-dom";
 const DetailsContainer = () => {
   const [movie, setMovie] = useState<any>({});
   const [actors, setActors] = useState<Actor[]>([]);
+  const [trailerModal, setTrailerModal] = useState(false);
+  const handleChangeTrailerModal = () => {
+    setTrailerModal(!trailerModal);
+  };
   const { id } = useParams();
   useEffect(() => {
     getMovieDetails(parseInt(id)).then((res) => {
@@ -15,6 +19,14 @@ const DetailsContainer = () => {
       setActors(res.data.cast.filter((cast) => cast.popularity > 20));
     });
   }, []);
-  return <Details {...movie} actors={actors} />;
+
+  return (
+    <Details
+      movie={movie}
+      actors={actors}
+      handleChangeTrailerModal={handleChangeTrailerModal}
+      trailerModal={trailerModal}
+    />
+  );
 };
 export default DetailsContainer;

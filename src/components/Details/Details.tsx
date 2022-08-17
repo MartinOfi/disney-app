@@ -1,23 +1,27 @@
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Carousel, Progress } from "antd";
+import { Carousel, Modal, Progress } from "antd";
 import { BASIC_IMAGE_URL } from "utils/constants";
 import { DetailsProps } from "./stories";
 import { DistributionCard, MoviePage, MoviePageWrapper } from "./styles";
 export const Details = ({
-  backdrop_path,
-  poster_path,
-  original_title,
-  genres,
-  homepage,
-  id,
-  overview,
-  release_date,
-  runtime,
-  videos,
-  vote_average,
+  movie,
   actors,
+  trailerModal,
+  handleChangeTrailerModal,
 }: DetailsProps) => {
+  const {
+    backdrop_path,
+    poster_path,
+    original_title,
+    genres,
+    overview,
+    release_date,
+    runtime,
+    videos,
+    vote_average,
+  } = movie;
+
   return (
     <div>
       <MoviePageWrapper bgImage={BASIC_IMAGE_URL + backdrop_path}>
@@ -40,7 +44,10 @@ export const Details = ({
               <p className="h5">Promedio de votos </p>
               <Progress type="circle" percent={Math.trunc(vote_average * 10)} />
               <br />
-              <button className="btn btn-primary mt-4">
+              <button
+                onClick={handleChangeTrailerModal}
+                className="btn btn-primary mt-4"
+              >
                 <FontAwesomeIcon icon={faPlay} /> Ver Trailer
               </button>
             </div>
@@ -65,11 +72,24 @@ export const Details = ({
           </div>
         </MoviePage>
       </MoviePageWrapper>
+      <Modal
+        visible={trailerModal}
+        footer={false}
+        width="80vw"
+        onCancel={handleChangeTrailerModal}
+      >
+        <div className="p-3">
+          {videos && (
+            <iframe
+              width="100%"
+              height="700px"
+              src={`https://www.youtube.com/embed/${videos.results[0].key}`}
+              title={videos.results[0].name}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
+          )}
+        </div>
+      </Modal>
     </div>
   );
 };
-/*  <CarouselAnt autoplay autoplaySpeed={5000}>
-      {popularMovies.map(({ id, title, backdrop_path }) => (
-        <Carousel key={id} id={id} title={title} image={backdrop_path} />
-      ))}
-    </CarouselAnt> */
