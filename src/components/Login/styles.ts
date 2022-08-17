@@ -14,7 +14,6 @@ export const FormStyled = styled.form`
     color: white;
   }
 `;
-/* d-flex flex-column justify-content-center align-items-center p-5 bg-dark */
 export const FormFooter = styled.div`
   display: flex;
   justify-content: space-between;

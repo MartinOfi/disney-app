@@ -1,5 +1,5 @@
 import { getGenresMovies, getMoviesByGenre } from "api";
-import { ContentCategory } from "components/ContentCategory/ContentCategory";
+import { ContentCategory } from "components";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
