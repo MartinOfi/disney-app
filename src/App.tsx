@@ -1,20 +1,47 @@
 import { HeaderContainer } from "components/Header/HeaderContainer";
-import AuthProvider from "context/authContext";
+import AuthProvider, { useAuth } from "context/authContext";
 import RegisterPage from "pages/register";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { DetailsPage, HomePage, LoginPage, CategoryPage } from "./pages";
 
 function App() {
+  const ProtectedRoute = ({ children }) => {
+    const { user } = useAuth();
+    if (!user) return <Navigate to={"/login"} />;
+    return <>{children}</>;
+  };
   return (
     <AuthProvider>
       <BrowserRouter>
         <HeaderContainer />
         <Routes>
-          <Route path="/" element={<HomePage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
-          <Route path="/category/:id" element={<CategoryPage />} />
-          <Route path="/detail/:id" element={<DetailsPage />} />
+
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <HomePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/category/:id"
+            element={
+              <ProtectedRoute>
+                <CategoryPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/detail/:id"
+            element={
+              <ProtectedRoute>
+                <DetailsPage />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
