@@ -22,11 +22,7 @@ export const Header = ({ userName, handleLogout }: HeaderProps) => {
   );
   return (
     <nav className="text-white d-flex justify-content-between align-items-center p-3">
-      <img
-        src="https://static-assets.bamgrid.com/product/disneyplus/images/logo.1a56f51c764022ee769c91d894d44326.svg"
-        alt=""
-        width={80}
-      />
+      <img src={"../logo.png"} alt="" width={150} height={80} />
 
       <div className="ms-4 d-flex align-items-center ">
         <FontAwesomeIcon icon={faSearch} />

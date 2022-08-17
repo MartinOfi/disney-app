@@ -13,7 +13,7 @@ export const CarouselContainer = () => {
   console.log(popularMovies);
 
   return (
-    <CarouselAnt centerMode autoplay autoplaySpeed={5000}>
+    <CarouselAnt autoplay autoplaySpeed={5000}>
       {popularMovies.map(({ id, title, backdrop_path }) => (
         <Carousel key={id} title={title} image={backdrop_path} />
       ))}

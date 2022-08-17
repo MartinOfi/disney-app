@@ -4,6 +4,8 @@ export const CarouselItemStyled = styled.div<{ image?: string }>`
   cursor: pointer;
   border-radius: 10px;
   text-align: center;
+  width: 70%;
+  margin: 0 auto;
   img {
     height: 40%;
     max-height: 350px;

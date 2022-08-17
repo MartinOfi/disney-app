@@ -22,3 +22,10 @@ export const getTopRatedMovies = async () => {
     console.error(error);
   }
 };
+export const getMovieDetails = async (id: number) => {
+  try {
+    return await axiosInstance.get(`/movie/${id}`);
+  } catch (error) {
+    console.error(error);
+  }
+};

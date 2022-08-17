@@ -14,7 +14,7 @@ function App() {
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="/category" element={<CategoryPage />} />
-          <Route path="/detail" element={<DetailsPage />} />
+          <Route path="/detail/:id" element={<DetailsPage />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
