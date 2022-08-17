@@ -14,10 +14,11 @@ export const useAuth = () => {
 
 const AuthProvider = ({ children }: any) => {
   const [user, setUser] = useState<any>(null);
-
+  const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
     return () => {
       unsubscribe();
@@ -32,7 +33,7 @@ const AuthProvider = ({ children }: any) => {
 
   const logout = () => signOut(auth);
   return (
-    <authContext.Provider value={{ user, signup, login, logout }}>
+    <authContext.Provider value={{ user, signup, login, logout, loading }}>
       {children}
     </authContext.Provider>
   );

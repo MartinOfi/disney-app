@@ -1,3 +1,4 @@
+import { Spin } from "antd";
 import { HeaderContainer } from "components/Header/HeaderContainer";
 import AuthProvider, { useAuth } from "context/authContext";
 import RegisterPage from "pages/register";
@@ -6,7 +7,8 @@ import { DetailsPage, HomePage, LoginPage, CategoryPage } from "./pages";
 
 function App() {
   const ProtectedRoute = ({ children }) => {
-    const { user } = useAuth();
+    const { user, loading } = useAuth();
+    if (loading) return <Spin />;
     if (!user) return <Navigate to={"/login"} />;
     return <>{children}</>;
   };
