@@ -10,8 +10,12 @@ export const NavStyled = styled.nav`
     height: 70px;
   }
   a {
-    text-decoration: none;
     color: white;
+    text-decoration: none;
+  }
+  p {
+    color: white;
+    margin-bottom: 0;
     text-transform: capitalize;
   }
 `;

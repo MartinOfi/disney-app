@@ -35,14 +35,14 @@ export const ContentDetails = ({
           <div className="d-flex align-items-center mb-4">
             <img src={BASIC_IMAGE_URL + poster_path} alt={original_title} />
             <div className="ms-4">
-              <h2 className="text-white ">Detalles:</h2>
+              <h2>Detalles:</h2>
               <p>
                 {release_date} • {runtime} min
               </p>
               <section className="d-flex">
                 {genres &&
                   genres.map((genre) => (
-                    <p key={genre.id} className="text-white me-3">
+                    <p key={genre.id} className="me-3">
                       {genre.name}
                     </p>
                   ))}
@@ -61,12 +61,12 @@ export const ContentDetails = ({
             </div>
           </div>
           <div className="p-3">
-            <h2 className="text-white">Descripcion</h2>
-            <p className="h5 text-white">{overview}</p>
+            <h2>Descripcion</h2>
+            <p className="h5">{overview}</p>
           </div>
           {actors.length > 0 && (
             <div className="p-3">
-              <h2 className="text-white">Reparto:</h2>
+              <h2>Reparto:</h2>
               <Carousel
                 centerMode
                 slidesPerRow={slides}

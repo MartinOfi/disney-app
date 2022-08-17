@@ -12,7 +12,7 @@ export const GenreContainer = () => {
   }, []);
 
   return (
-    <GenreGrid className="mx-5 p-3">
+    <GenreGrid>
       {genres.map((genre) => (
         <Genre key={genre.id} genre={genre} />
       ))}

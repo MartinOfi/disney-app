@@ -26,17 +26,14 @@ export const Header = ({ userName, handleLogout }: HeaderProps) => {
         <Dropdown overlay={menu}>
           <a onClick={(e) => e.preventDefault()}>
             <Space>
-              <button className="btn bg-secondary text-white border-0">
-                <p className="mb-0 text-capitalize">{userName}</p>
+              <button className="btn bg-secondary border-0">
+                <p>{userName}</p>
               </button>
             </Space>
           </a>
         </Dropdown>
       ) : (
-        <Link
-          to={"/login"}
-          className="text-decoration-none text-white text-capitalize"
-        >
+        <Link to={"/login"}>
           <p className=" mb-0">INICIAR SESION</p>
         </Link>
       )}

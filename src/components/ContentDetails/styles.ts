@@ -28,10 +28,15 @@ export const MoviePage = styled.div`
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   }
+  h1,
+  h2,
+  p {
+    color: white;
+  }
   h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    background-color: aliceblue;
+
     border-radius: 10px;
     margin: 0;
     padding: 10px;
@@ -56,5 +61,8 @@ export const DistributionCard = styled.div`
     width: 100%;
     max-width: 250px !important;
     margin-right: 0 !important;
+  }
+  p {
+    color: black;
   }
 `;
