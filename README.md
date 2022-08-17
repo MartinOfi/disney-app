@@ -4,7 +4,7 @@ Aplicación web que muestra distintas peliculas con sus detalles particulares.
 
 **Aquí tienes la aplicación desplegada en producción:**
 
-- https://covid-app-six.vercel.app/
+- https://wiki-tincho.vercel.app/
 
 ## ¿Cómo lo ejecuto en local?
 
