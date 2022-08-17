@@ -5,7 +5,7 @@ import { useSlidesToShow } from "hooks/useSlidesToShow";
 import { BASIC_IMAGE_URL, responsive } from "utils/constants";
 import { DetailsProps } from "./stories";
 import { DistributionCard, MoviePage, MoviePageWrapper } from "./styles";
-
+import { Helmet } from "react-helmet";
 export const ContentDetails = ({
   movie,
   actors,
@@ -27,6 +27,9 @@ export const ContentDetails = ({
 
   return (
     <div>
+      <Helmet>
+        <title>{original_title}</title>
+      </Helmet>
       <MoviePageWrapper bgImage={BASIC_IMAGE_URL + backdrop_path}>
         <MoviePage>
           <div className="d-flex align-items-center mb-4">

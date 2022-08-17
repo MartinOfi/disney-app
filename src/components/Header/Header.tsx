@@ -2,7 +2,6 @@ import { Dropdown, Menu, Space } from "antd";
 import { Link } from "react-router-dom";
 import { HeaderProps } from "./stories";
 import { NavStyled } from "./styles";
-
 export const Header = ({ userName, handleLogout }: HeaderProps) => {
   const menu = (
     <Menu
