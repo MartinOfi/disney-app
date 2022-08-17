@@ -7,7 +7,7 @@ export const getGenresMovies = async () => {
     console.error(error);
   }
 };
-export const getMoviesByGenre = async (id: number) => {
+export const getMoviesByGenre = async (id: string) => {
   try {
     return await axiosInstance.get(
       `/discover/movie?&language=en-ES&with_genres=${id}`

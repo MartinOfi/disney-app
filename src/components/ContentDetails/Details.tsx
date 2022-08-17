@@ -1,16 +1,10 @@
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Carousel, Modal, Progress } from "antd";
-import { SlidesResponsive, useSlidesToShow } from "hooks/useSlidesToShow";
-import { BASIC_IMAGE_URL } from "utils/constants";
+import { useSlidesToShow } from "hooks/useSlidesToShow";
+import { BASIC_IMAGE_URL, responsive } from "utils/constants";
 import { DetailsProps } from "./stories";
 import { DistributionCard, MoviePage, MoviePageWrapper } from "./styles";
-const responsive: SlidesResponsive[] = [
-  { breakpoint: 480, slides: 1 },
-  { breakpoint: 768, slides: 2 },
-  { breakpoint: 1024, slides: 3 },
-  { breakpoint: 1300, slides: 4 },
-];
 
 export const ContentDetails = ({
   movie,
