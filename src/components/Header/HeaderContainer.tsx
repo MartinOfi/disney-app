@@ -8,8 +8,7 @@ export const HeaderContainer = () => {
   const navigate = useNavigate();
 
   const userName: string | boolean = useMemo(
-    () =>
-      user ? user.email.slice(0, "martinoficialdegui@asd".indexOf("@")) : null,
+    () => (user ? user.email.slice(0, user.email.indexOf("@")) : null),
     [user]
   );
 

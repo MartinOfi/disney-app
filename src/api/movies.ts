@@ -24,7 +24,16 @@ export const getTopRatedMovies = async () => {
 };
 export const getMovieDetails = async (id: number) => {
   try {
-    return await axiosInstance.get(`/movie/${id}`);
+    return await axiosInstance.get(
+      `/movie/${id}?language=es-ES&append_to_response=videos`
+    );
+  } catch (error) {
+    console.error(error);
+  }
+};
+export const getMovieCredits = async (id: number) => {
+  try {
+    return await axiosInstance.get(`/movie/${id}/credits`);
   } catch (error) {
     console.error(error);
   }

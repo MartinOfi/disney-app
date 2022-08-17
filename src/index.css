@@ -19,6 +19,12 @@ code {
 .color-secondary{
   color: #60688492
 }
+.bg-primary{
+  background-color: #1a1d29 !important;
+}
 .bg-secondary{
-  background-color: #60688492
+  background-color: #60688492 !important
+}
+.ant-progress-text{
+  color: #fff !important;
 }
