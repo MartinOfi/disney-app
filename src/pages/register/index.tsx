@@ -21,6 +21,9 @@ const RegisterPage = () => {
   const onSubmit = async ({ email, password }, { setFieldError }) => {
     loadingRegisterAlert();
     try {
+      if (email.includes(" ")) {
+        email = email.replace(/ /g, "");
+      }
       await signup(email, password);
       successRegisterAlert(navigate("/"));
     } catch ({ code }) {
