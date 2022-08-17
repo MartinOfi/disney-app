@@ -22,7 +22,9 @@ export const Header = ({ userName, handleLogout }: HeaderProps) => {
   );
   return (
     <nav className="text-white d-flex justify-content-between align-items-center p-3">
-      <img src={"../logo.png"} alt="" width={150} height={80} />
+      <Link to={"/"}>
+        <img src={"../logo.png"} alt="" width={150} height={80} />
+      </Link>
 
       <div className="ms-4 d-flex align-items-center ">
         <FontAwesomeIcon icon={faSearch} />

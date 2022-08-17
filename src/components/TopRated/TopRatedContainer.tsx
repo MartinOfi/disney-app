@@ -15,7 +15,7 @@ export const TopRatedContainer = () => {
       <p className="text-white h5 my">Los más valorados</p>
       <CarouselAntd slidesToShow={5} centerMode autoplay autoplaySpeed={5000}>
         {topRatedMovies.map(({ id, poster_path }) => {
-          return <Carousel key={id} image={poster_path} />;
+          return <Carousel key={id} id={id} image={poster_path} />;
         })}
       </CarouselAntd>
     </div>
