@@ -9,6 +9,7 @@ export interface Actor {
   character?: string;
   name: string;
   profile_path: string;
+  popularity: number;
 }
 interface Movie {
   backdrop_path: string;

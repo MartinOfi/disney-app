@@ -4,7 +4,7 @@ import { Login } from "./Login/Login";
 import { HeaderContainer } from "./Header/HeaderContainer";
 import { GenreContainer } from "./Genres/GenresContainer";
 import { CarouselContainer } from "./Carousel/CarouselContainer";
-import { Details } from "./Details/Details";
+import { ContentDetails } from "./ContentDetails/Details";
 
 export {
   TopRatedContainer,
@@ -13,5 +13,5 @@ export {
   HeaderContainer,
   GenreContainer,
   CarouselContainer,
-  Details,
+  ContentDetails,
 };

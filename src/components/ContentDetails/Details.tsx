@@ -1,15 +1,24 @@
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Carousel, Modal, Progress } from "antd";
+import { SlidesResponsive, useSlidesToShow } from "hooks/useSlidesToShow";
 import { BASIC_IMAGE_URL } from "utils/constants";
 import { DetailsProps } from "./stories";
 import { DistributionCard, MoviePage, MoviePageWrapper } from "./styles";
-export const Details = ({
+const responsive: SlidesResponsive[] = [
+  { breakpoint: 480, slides: 1 },
+  { breakpoint: 768, slides: 2 },
+  { breakpoint: 1024, slides: 3 },
+  { breakpoint: 1300, slides: 4 },
+];
+
+export const ContentDetails = ({
   movie,
   actors,
   trailerModal,
   handleChangeTrailerModal,
 }: DetailsProps) => {
+  const { slides } = useSlidesToShow(responsive);
   const {
     backdrop_path,
     poster_path,
@@ -44,34 +53,44 @@ export const Details = ({
               <p className="h5">Promedio de votos </p>
               <Progress type="circle" percent={Math.trunc(vote_average * 10)} />
               <br />
-              <button
-                onClick={handleChangeTrailerModal}
-                className="btn btn-primary mt-4"
-              >
-                <FontAwesomeIcon icon={faPlay} /> Ver Trailer
-              </button>
+              {videos?.results.length > 0 && (
+                <button
+                  onClick={handleChangeTrailerModal}
+                  className="btn btn-primary mt-4"
+                >
+                  <FontAwesomeIcon icon={faPlay} /> Ver Trailer
+                </button>
+              )}
             </div>
           </div>
           <div className="p-3">
             <h2 className="text-white">Descripcion</h2>
             <p className="h5 text-white">{overview}</p>
           </div>
-          <div className="p-3">
-            <h2 className="text-white">Reparto:</h2>
-            <Carousel centerMode slidesPerRow={4} autoplay autoplaySpeed={5000}>
-              {actors.map(({ id, name, profile_path, character }) => (
-                <div>
-                  <DistributionCard>
-                    <img src={BASIC_IMAGE_URL + profile_path} alt={name} />
-                    <strong>{name}</strong>
-                    <p>{character}</p>
-                  </DistributionCard>
-                </div>
-              ))}
-            </Carousel>
-          </div>
+          {actors.length > 0 && (
+            <div className="p-3">
+              <h2 className="text-white">Reparto:</h2>
+              <Carousel
+                centerMode
+                slidesPerRow={slides}
+                autoplay
+                autoplaySpeed={5000}
+              >
+                {actors.map(({ id, name, profile_path, character }) => (
+                  <div key={id}>
+                    <DistributionCard>
+                      <img src={BASIC_IMAGE_URL + profile_path} alt={name} />
+                      <strong className="text-truncate">{name}</strong>
+                      <p className="text-truncate">{character}</p>
+                    </DistributionCard>
+                  </div>
+                ))}
+              </Carousel>
+            </div>
+          )}
         </MoviePage>
       </MoviePageWrapper>
+
       <Modal
         visible={trailerModal}
         footer={false}
@@ -79,7 +98,7 @@ export const Details = ({
         onCancel={handleChangeTrailerModal}
       >
         <div className="p-3">
-          {videos && (
+          {videos?.results.length > 0 && (
             <iframe
               width="100%"
               height="700px"

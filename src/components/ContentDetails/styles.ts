@@ -40,6 +40,8 @@ export const MoviePage = styled.div`
 export const DistributionCard = styled.div`
   margin: 5px 5px;
   width: 100%;
+  min-height: 100px;
+
   max-width: 250px !important;
   margin-bottom: 50px;
   background-color: white;
@@ -52,6 +54,7 @@ export const DistributionCard = styled.div`
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   img {
     width: 100%;
+    max-width: 250px !important;
     margin-right: 0 !important;
   }
 `;
