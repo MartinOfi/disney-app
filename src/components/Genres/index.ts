@@ -1,0 +1,1 @@
+export { GenreContainer } from "./GenresContainer";

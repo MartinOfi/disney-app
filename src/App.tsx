@@ -1,5 +1,5 @@
 import { Spin } from "antd";
-import { HeaderContainer } from "components/Header/HeaderContainer";
+import { HeaderContainer } from "components";
 import AuthProvider, { useAuth } from "context/authContext";
 import RegisterPage from "pages/register";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";

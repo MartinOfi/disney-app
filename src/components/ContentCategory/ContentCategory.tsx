@@ -1,5 +1,5 @@
 import { Carousel as CarouselAntd } from "antd";
-import { Carousel } from "components/Carousel/Carousel";
+import { Carousel } from "components/Carousel";
 import { useSlidesToShow } from "hooks/useSlidesToShow";
 import { responsive } from "utils/constants";
 import { ContentCategoryProps } from "./stories";
